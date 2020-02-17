@@ -56,26 +56,6 @@ class Starter
     }
 
     /**
-     * Rebuild the cached package manifest for all workbench packages
-     *
-     * @param  string  $path The path to workbench directory
-     * @param  \Symfony\Component\Finder\Finder  $finder
-     * @return void
-     */
-    public static function discoverAllPackages($path, Finder $finder = null)
-    {
-        $finder = $finder ?: new Finder;
-
-        // We will use the finder to locate all package directories in the workbench
-        // directory, then we will discover each package.
-        $directories = $finder->in($path)->directories()->depth('== 1')->followLinks();
-
-        foreach ($directories as $directory) {
-            static::discoverPackage($directory->getRealPath());
-        }
-    }
-
-    /**
      * Cache workbench package manifest on the package path
      *
      * @param  string  $path The path to package directory
