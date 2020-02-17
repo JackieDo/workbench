@@ -1,7 +1,6 @@
 <?php namespace Jackiedo\Workbench\Console;
 
 use Illuminate\Console\Command;
-use Jackiedo\Workbench\Starter;
 use Symfony\Component\Console\Input\InputArgument;
 
 class WorkbenchDeleteCommand extends Command
@@ -60,10 +59,8 @@ class WorkbenchDeleteCommand extends Command
                 @undir($this->vendorDir);
             }
 
-            Starter::removeDiscoveredPackage($this->package);
+            $this->info('>>> Workbench package "'.$this->package.'" has been deleted.');
         }
-
-        $this->info('>>> Workbench package "'.$this->package.'" has been deleted.');
     }
 
     /**
