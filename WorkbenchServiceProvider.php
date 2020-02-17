@@ -1,6 +1,8 @@
 <?php namespace Jackiedo\Workbench;
 
 use Illuminate\Support\ServiceProvider;
+use Jackiedo\Workbench\Console\WorkbenchDeleteCommand;
+use Jackiedo\Workbench\Console\WorkbenchDumpAutoloadCommand;
 use Jackiedo\Workbench\Console\WorkbenchMakeCommand;
 
 class WorkbenchServiceProvider extends ServiceProvider
@@ -41,11 +43,21 @@ class WorkbenchServiceProvider extends ServiceProvider
             return new PackageCreator($app['files']);
         });
 
-        $this->app->singleton('command.workbench', function ($app) {
+        $this->app->singleton('command.workbench.make', function ($app) {
             return new WorkbenchMakeCommand($app['package.creator']);
         });
 
-        $this->commands('command.workbench');
+        $this->app->singleton('command.workbench.delete', function ($app) {
+            return new WorkbenchDeleteCommand;
+        });
+
+        $this->app->singleton('command.workbench.dump-autoload', function ($app) {
+            return new WorkbenchDumpAutoloadCommand;
+        });
+
+        $this->commands('command.workbench.make');
+        $this->commands('command.workbench.delete');
+        $this->commands('command.workbench.dump-autoload');
     }
 
     /**
@@ -55,6 +67,11 @@ class WorkbenchServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('package.creator', 'command.workbench');
+        return array(
+            'package.creator',
+            'command.workbench.make',
+            'command.workbench.delete',
+            'command.workbench.dump-autoload',
+        );
     }
 }

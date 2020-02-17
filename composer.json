@@ -1,6 +1,6 @@
 {
     "name": "jackiedo/workbench",
-    "description": "Bring workbench back to Laravel 5.",
+    "description": "Bring workbench back to Laravel 5+",
     "license": "MIT",
     "authors": [
         {
@@ -22,6 +22,9 @@
         "illuminate/console": "~5.1"
     },
     "autoload": {
+        "files": [
+            "helpers.php"
+        ],
         "psr-4": {
             "Jackiedo\\Workbench\\": ""
         }
