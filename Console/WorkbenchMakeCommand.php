@@ -65,9 +65,6 @@ class WorkbenchMakeCommand extends Command
         $this->info(PHP_EOL.'>>> Dumping autoloader for this workbench package, please wait...'.PHP_EOL);
         Starter::dumpAutoload($package_path);
 
-        $this->info(PHP_EOL.'>>> Building the cached package manifest for this workbench package, please wait...');
-        Starter::discoverPackage($package_path);
-
         $this->info(PHP_EOL.'>>> Your workbench package is created and stored at "'.$package_path.'".');
     }
 

@@ -11,6 +11,6 @@
         @end}}';
 
         $this->publishes([
-            $packageMigrationsPath => database_path('migrations')
+            $packageMigrationsPath => base_path('database/migrations')
         ], 'migrations');
     }
