@@ -133,7 +133,7 @@ class PackageCreator
             $this->{"write{$block}"}();
         }
 
-        return $this->packageDirPath;
+        return realpath($this->packageDirPath);
     }
 
     /**
