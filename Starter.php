@@ -29,4 +29,29 @@ class Starter
             $files->requireOnce($file->getRealPath());
         }
     }
+
+    /**
+     * Alias of the start() method
+     *
+     * @param  string  $path The path to workbench directory
+     * @param  \Symfony\Component\Finder\Finder  $finder
+     * @param  \Illuminate\Filesystem\Filesystem  $files
+     * @return void
+     */
+    public static function autoload($path, Finder $finder = null, Filesystem $files = null)
+    {
+        static::start($path, $finder, $files);
+    }
+
+    /**
+     * Call composer dump-autoload command on the package path
+     *
+     * @param  string $path The path to package directory
+     * @return void
+     */
+    public static function dumpAutoload($path)
+    {
+        chdir($path);
+        passthru('composer dump-autoload');
+    }
 }
