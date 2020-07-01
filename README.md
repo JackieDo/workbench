@@ -1,9 +1,20 @@
+**As of July 1 2020, Laravel Workbench is no longer maintained.**
+
+It will still exist as an archive, but it will not be taken care of, resolve issues and no new releases will be released in the future.
+
+Because the versions of the package have been fragmented, at the same time its features are no longer useful and suitable for modern Laravel versions, I decided to stop developing for it. Instead, I built another more efficient package called [Laravel Packager](https://github.com/JackieDo/laravel-packager) and put energy into it.
+
+— *Jackie Do*
+
+---
+
+# Laravel Workbench
+
 [![Latest Stable Version](https://poser.pugx.org/jackiedo/workbench/v/stable)](https://packagist.org/packages/jackiedo/workbench)
 [![Total Downloads](https://poser.pugx.org/jackiedo/workbench/downloads)](https://packagist.org/packages/jackiedo/workbench)
 [![Latest Unstable Version](https://poser.pugx.org/jackiedo/workbench/v/unstable)](https://packagist.org/packages/jackiedo/workbench)
 [![License](https://poser.pugx.org/jackiedo/workbench/license)](https://packagist.org/packages/jackiedo/workbench)
 
-# Laravel Workbench
 Laravel Workbench (originally from Laravel 4.x, has now stopped growing) support our in building perfect structured packages for Laravel without spending a lot of time.
 
 This package was created to bring Laravel Workbench back to Laravel 5+ and higher. Let this package support you in every detail through it's powerful features.
